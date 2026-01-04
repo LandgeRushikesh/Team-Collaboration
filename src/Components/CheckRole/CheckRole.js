@@ -1,0 +1,18 @@
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../Config/Firbase-Config";
+
+const CheckRole = async (userId) => {
+    try {
+        const userRef = doc(db, "users", userId)
+        const userData = await getDoc(userRef)
+        const role = userData.data().role
+
+        return role
+    }
+    catch (err) {
+        alert(err.message)
+    }
+
+}
+
+export default CheckRole

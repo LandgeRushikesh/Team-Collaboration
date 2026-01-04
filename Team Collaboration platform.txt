@@ -1,0 +1,20 @@
+Team Collaboration platform:
+ 
+1. Team Lead
+   -dashboard
+   -add team member
+   -add resources
+   -allocate task to member
+   -create meeting
+   -add milestone
+   -calendar
+
+2. Team member
+   -dashboard
+   -Ai chatbot
+   -chat room
+   -meet room
+   -task
+   -resources related to project
+   -milestone
+   -calendar
