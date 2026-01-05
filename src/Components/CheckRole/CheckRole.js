@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../Config/Firbase-Config";
+import { db } from "../../Config/Firebase-Config";
 
 const CheckRole = async (userId) => {
     try {
