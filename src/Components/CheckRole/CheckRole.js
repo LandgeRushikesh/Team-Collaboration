@@ -5,9 +5,15 @@ const CheckRole = async (userId) => {
     try {
         const userRef = doc(db, "users", userId)
         const userData = await getDoc(userRef)
-        const role = userData.data().role
 
-        return role
+        if (userData.exists()) {
+            const role = userData.data().role
+            return role
+        }
+        else {
+            return null
+        }
+
     }
     catch (err) {
         alert(err.message)

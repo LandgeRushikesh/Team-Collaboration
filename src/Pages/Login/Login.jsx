@@ -15,17 +15,7 @@ const Login = () => {
 
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-      alert("User Logged In Successfully!!!");
-
-      const userId = res.user.uid;
-
-      const role = await CheckRole(userId);
-
-      if (role === "Lead") {
-        navigate("/lead");
-      } else if (role === "Member") {
-        navigate("/member");
-      }
+      navigate("/");
     } catch (err) {
       console.log(err.message);
     }
