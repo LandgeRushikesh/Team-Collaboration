@@ -22,7 +22,7 @@ const TeamLeadLayout = () => {
       <div
         className={`${
           iscollapsed ? "w-16" : "w-64"
-        } flex flex-col transition-all duration-200 ease-in-out`}
+        } flex flex-col transition-all duration-300 ease-in-out`}
       >
         <SidebarHeader
           isCollapsed={iscollapsed}
@@ -33,7 +33,7 @@ const TeamLeadLayout = () => {
       {/* Right Side */}
       <div className="flex-1 flex flex-col">
         <Header />
-        <div className="overflow-y-auto flex-1 flex">
+        <div className="overflow-y-auto flex-1 flex bg-slate-700 text-white">
           <Outlet />
         </div>
       </div>

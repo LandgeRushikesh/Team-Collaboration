@@ -38,7 +38,9 @@ const Approutes = () => {
               </RoleRoute>
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path="" element={<Member />} />
+        </Route>
       </Routes>
     </>
   );

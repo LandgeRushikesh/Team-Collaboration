@@ -9,14 +9,17 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [name, setName] = useState("User");
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setCurrentUser(user);
 
-        const role = await CheckRole(user.uid);
+        const { role, name } = await CheckRole(user.uid);
+
         setRole(role);
+        setName(name || "User");
       } else {
         setCurrentUser(null);
         setRole(null);
@@ -28,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
   return (
-    <AuthContext.Provider value={{ currentUser, role, loading }}>
+    <AuthContext.Provider value={{ currentUser, role, loading, name }}>
       {children}
     </AuthContext.Provider>
   );

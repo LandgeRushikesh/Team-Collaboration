@@ -8,7 +8,8 @@ const CheckRole = async (userId) => {
 
         if (userData.exists()) {
             const role = userData.data().role
-            return role
+            const name = userData.data().name
+            return { role, name }
         }
         else {
             return null
