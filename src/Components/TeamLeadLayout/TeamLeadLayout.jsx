@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarHeader from "../Sidebar/SidebarHeader";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const TeamLeadLayout = () => {
+  const [iscollapsed, setIsCollapsed] = useState(false);
   const content = [
     "dashboard",
     "add team member",
@@ -14,12 +15,20 @@ const TeamLeadLayout = () => {
     "add milestone",
     "calendar",
   ];
+
   return (
     <div className="flex  w-full h-screen">
       {/* Left side */}
-      <div className="w-64 flex flex-col">
-        <SidebarHeader />
-        <Sidebar content={content} />
+      <div
+        className={`${
+          iscollapsed ? "w-16" : "w-64"
+        } flex flex-col transition-all duration-200 ease-in-out`}
+      >
+        <SidebarHeader
+          isCollapsed={iscollapsed}
+          setIsCollapsed={setIsCollapsed}
+        />
+        <Sidebar content={content} isCollapsed={iscollapsed} />
       </div>
       {/* Right Side */}
       <div className="flex-1 flex flex-col">

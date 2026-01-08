@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sidebar = ({ content }) => {
+const Sidebar = ({ content, isCollapsed }) => {
   return (
     <div className="bg-green-400 h-full">
       {content.map((item, index) => (
