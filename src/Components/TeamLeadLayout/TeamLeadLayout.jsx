@@ -1,0 +1,35 @@
+import React from "react";
+import SidebarHeader from "../Sidebar/SidebarHeader";
+import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
+
+const TeamLeadLayout = () => {
+  const content = [
+    "dashboard",
+    "add team member",
+    "add resources",
+    "allocate task to member",
+    "create meeting",
+    "add milestone",
+    "calendar",
+  ];
+  return (
+    <div className="flex  w-full h-screen">
+      {/* Left side */}
+      <div className="w-64 flex flex-col">
+        <SidebarHeader />
+        <Sidebar content={content} />
+      </div>
+      {/* Right Side */}
+      <div className="flex-1 flex flex-col">
+        <Header />
+        <div className="overflow-y-auto flex-1 flex">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TeamLeadLayout;

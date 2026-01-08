@@ -7,6 +7,8 @@ import ForgotPassword from "../../Pages/Login/ForgotPassword";
 import ProtectedRoute from "./ProtectedRoute";
 import RoleRoute from "./RoleRoute";
 import Home from "../Home/Home";
+import TeamLeadLayout from "../TeamLeadLayout/TeamLeadLayout";
+import TeamMemberLayout from "../TeamMemberLayout/TeamMemberLayout";
 
 const Approutes = () => {
   return (
@@ -20,17 +22,19 @@ const Approutes = () => {
           element={
             <ProtectedRoute>
               <RoleRoute allowedRole="Lead">
-                <TeamLead />
+                <TeamLeadLayout />
               </RoleRoute>
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path="" element={<TeamLead />} />
+        </Route>
         <Route
           path="/member"
           element={
             <ProtectedRoute>
               <RoleRoute allowedRole="Member">
-                <Member />
+                <TeamMemberLayout />
               </RoleRoute>
             </ProtectedRoute>
           }
