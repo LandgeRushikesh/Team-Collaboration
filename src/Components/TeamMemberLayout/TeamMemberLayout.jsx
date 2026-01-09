@@ -3,19 +3,29 @@ import Sidebar from "../Sidebar/Sidebar";
 import SidebarHeader from "../Sidebar/SidebarHeader";
 import Header from "../Header/Header";
 import { Outlet } from "react-router-dom";
+import {
+  LayoutDashboard,
+  Bot,
+  MessageSquare,
+  Video,
+  CheckSquare,
+  FolderOpen,
+  Flag,
+  CalendarDays,
+} from "lucide-react";
 
 const TeamMemberLayout = () => {
   const [iscollapsed, setIsCollapsed] = useState(false);
 
   const items = [
-    { Name: "Dashboard", path: "/member", end: true },
-    { Name: "AI Chatbot", path: "/member/ai-chatbot" },
-    { Name: "Chat Room", path: "/member/chat-room" },
-    { Name: "Meet Room", path: "/member/meet-room" },
-    { Name: "Tasks", path: "/member/tasks" },
-    { Name: "Resources", path: "/member/resources" },
-    { Name: "Milestone", path: "/member/milestone" },
-    { Name: "Calendar", path: "/member/calendar" },
+    { Name: "Dashboard", path: "/member", icon: LayoutDashboard, end: true },
+    { Name: "AI Chatbot", path: "/member/ai-chatbot", icon: Bot },
+    { Name: "Chat Room", path: "/member/chat-room", icon: MessageSquare },
+    { Name: "Meet Room", path: "/member/meet-room", icon: Video },
+    { Name: "Tasks", path: "/member/tasks", icon: CheckSquare },
+    { Name: "Resources", path: "/member/resources", icon: FolderOpen },
+    { Name: "Milestone", path: "/member/milestone", icon: Flag },
+    { Name: "Calendar", path: "/member/calendar", icon: CalendarDays },
   ];
   return (
     <div className="flex  w-full h-screen">

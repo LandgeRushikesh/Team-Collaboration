@@ -12,12 +12,15 @@ const Sidebar = ({ content, isCollapsed }) => {
             end={item.end}
             key={index}
             className={({ isActive }) =>
-              `py-3 mx-2 px-2 text-center rounded-lg transition-all duration-300 ease-in-out ${
+              `py-3 mx-2 px-2 rounded-lg transition-all duration-300 ease-in-out flex justify-start items-center ${
                 isActive ? "bg-slate-600" : ""
               }`
             }
           >
-            {item.Name}
+            <span>
+              <item.icon className="w-5 h-5 shrink-0 mx-2" />
+            </span>{" "}
+            {!isCollapsed && <span>{item.Name}</span>}
           </NavLink>
         ))}
       </div>

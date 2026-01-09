@@ -3,17 +3,26 @@ import SidebarHeader from "../Sidebar/SidebarHeader";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
+import {
+  LayoutDashboard,
+  UserPlus,
+  FolderPlus,
+  ClipboardList,
+  Video,
+  Flag,
+  CalendarDays,
+} from "lucide-react";
 
 const TeamLeadLayout = () => {
   const [iscollapsed, setIsCollapsed] = useState(false);
   const items = [
-    { Name: "Dashboard", path: "/lead", end: true },
-    { Name: "Add Team Member", path: "/lead/add-team-member" },
-    { Name: "Add Resources", path: "/lead/add-resources" },
-    { Name: "Allocate Task", path: "/lead/allocate-task" },
-    { Name: "Create Meeting", path: "/lead/create-meeting" },
-    { Name: "Add Milestone", path: "/lead/add-milestone" },
-    { Name: "Calendar", path: "/lead/calendar" },
+    { Name: "Dashboard", path: "/lead", icon: LayoutDashboard, end: true },
+    { Name: "Add Team Member", path: "/lead/add-team-member", icon: UserPlus },
+    { Name: "Add Resources", path: "/lead/add-resources", icon: FolderPlus },
+    { Name: "Allocate Task", path: "/lead/allocate-task", icon: ClipboardList },
+    { Name: "Create Meeting", path: "/lead/create-meeting", icon: Video },
+    { Name: "Add Milestone", path: "/lead/add-milestone", icon: Flag },
+    { Name: "Calendar", path: "/lead/calendar", icon: CalendarDays },
   ];
 
   return (

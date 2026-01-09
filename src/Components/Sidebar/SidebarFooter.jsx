@@ -8,14 +8,9 @@ const SidebarFooter = ({ isCollapsed }) => {
   let n = profile.length;
   profile = profile[0][0].toUpperCase() + profile[n - 1][0].toUpperCase();
 
-  console.log(profile);
-
   return (
     <div className="px-2 h-full flex justify-around items-center bg-slate-900 text-white cursor-pointer">
-      <p
-        className="bg-indigo-500
- px-3 py-2 rounded-[50%] font-bold text-xl"
-      >
+      <p className="bg-indigo-500 px-3 py-2 rounded-[50%] font-bold text-xl">
         {profile}
       </p>
       {!isCollapsed && (
