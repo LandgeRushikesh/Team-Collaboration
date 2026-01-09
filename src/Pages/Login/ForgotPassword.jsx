@@ -17,7 +17,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="w-[100vw] min-h-screen flex justify-center items-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] font-serif">
+    <div className="w-[100vw] min-h-screen flex justify-center items-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e]">
       <form
         onSubmit={(e) => HandleReset(e)}
         className="w-1/3 flex flex-col justify-around items-center bg-black bg-opacity-50 px-4 py-3 rounded-xl"

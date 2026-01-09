@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ content, isCollapsed }) => {
   return (
-    <div className="bg-slate-800 h-full relative text-white">
+    <div className="bg-slate-800 h-full relative text-white py-3">
       <div className="overscroll-y-auto flex flex-col">
         {content.map((item, index) => (
           <NavLink
@@ -13,7 +13,7 @@ const Sidebar = ({ content, isCollapsed }) => {
             key={index}
             className={({ isActive }) =>
               `py-3 mx-2 px-2 rounded-lg transition-all duration-300 ease-in-out flex justify-start items-center ${
-                isActive ? "bg-slate-600" : ""
+                isActive ? "bg-slate-600/60 shadow-inner" : ""
               }`
             }
           >

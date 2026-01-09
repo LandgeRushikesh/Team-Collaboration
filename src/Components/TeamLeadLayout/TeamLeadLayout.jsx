@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarHeader from "../Sidebar/SidebarHeader";
 import Header from "../Header/Header";
 import Sidebar from "../Sidebar/Sidebar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   UserPlus,
@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 
 const TeamLeadLayout = () => {
+  const location = useLocation();
+
+  const [title, setTitle] = useState(null);
   const [iscollapsed, setIsCollapsed] = useState(false);
   const items = [
     { Name: "Dashboard", path: "/lead", icon: LayoutDashboard, end: true },
@@ -24,6 +27,11 @@ const TeamLeadLayout = () => {
     { Name: "Add Milestone", path: "/lead/add-milestone", icon: Flag },
     { Name: "Calendar", path: "/lead/calendar", icon: CalendarDays },
   ];
+
+  useEffect(() => {
+    const ele = items.find((item) => item.path == location.pathname);
+    setTitle(ele.Name);
+  }, [location.pathname]);
 
   return (
     <div className="flex  w-full h-screen">
@@ -41,7 +49,7 @@ const TeamLeadLayout = () => {
       </div>
       {/* Right Side */}
       <div className="flex-1 flex flex-col">
-        <Header />
+        <Header title={title} />
         <div className="overflow-y-auto flex-1 flex bg-slate-700 text-white">
           <Outlet />
         </div>
