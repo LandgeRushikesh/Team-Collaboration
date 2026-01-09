@@ -7,15 +7,15 @@ import { Outlet } from "react-router-dom";
 const TeamMemberLayout = () => {
   const [iscollapsed, setIsCollapsed] = useState(false);
 
-  const content = [
-    "dashboard",
-    "Ai chatbot",
-    "chat room",
-    "meet room",
-    "task",
-    "resources related to project",
-    "milestone",
-    "calendar",
+  const items = [
+    { Name: "Dashboard", path: "/member", end: true },
+    { Name: "AI Chatbot", path: "/member/ai-chatbot" },
+    { Name: "Chat Room", path: "/member/chat-room" },
+    { Name: "Meet Room", path: "/member/meet-room" },
+    { Name: "Tasks", path: "/member/tasks" },
+    { Name: "Resources", path: "/member/resources" },
+    { Name: "Milestone", path: "/member/milestone" },
+    { Name: "Calendar", path: "/member/calendar" },
   ];
   return (
     <div className="flex  w-full h-screen">
@@ -29,7 +29,7 @@ const TeamMemberLayout = () => {
           isCollapsed={iscollapsed}
           setIsCollapsed={setIsCollapsed}
         />
-        <Sidebar content={content} isCollapsed={iscollapsed} />
+        <Sidebar content={items} isCollapsed={iscollapsed} />
       </div>
       {/* Right Side */}
       <div className="flex-1 flex flex-col">

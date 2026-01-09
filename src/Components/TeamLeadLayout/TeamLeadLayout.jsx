@@ -6,14 +6,14 @@ import { Outlet } from "react-router-dom";
 
 const TeamLeadLayout = () => {
   const [iscollapsed, setIsCollapsed] = useState(false);
-  const content = [
-    "dashboard",
-    "add team member",
-    "add resources",
-    "allocate task to member",
-    "create meeting",
-    "add milestone",
-    "calendar",
+  const items = [
+    { Name: "Dashboard", path: "/lead", end: true },
+    { Name: "Add Team Member", path: "/lead/add-team-member" },
+    { Name: "Add Resources", path: "/lead/add-resources" },
+    { Name: "Allocate Task", path: "/lead/allocate-task" },
+    { Name: "Create Meeting", path: "/lead/create-meeting" },
+    { Name: "Add Milestone", path: "/lead/add-milestone" },
+    { Name: "Calendar", path: "/lead/calendar" },
   ];
 
   return (
@@ -28,7 +28,7 @@ const TeamLeadLayout = () => {
           isCollapsed={iscollapsed}
           setIsCollapsed={setIsCollapsed}
         />
-        <Sidebar content={content} isCollapsed={iscollapsed} />
+        <Sidebar content={items} isCollapsed={iscollapsed} />
       </div>
       {/* Right Side */}
       <div className="flex-1 flex flex-col">
